@@ -279,6 +279,12 @@ img {
   pointer-events: none;
 }
 
+#scroll::after {
+  content: "";
+  display: block;
+  height: 30vh;
+}
+
 .step {
   margin: 0 auto 80vh auto;
   padding: 20px;
@@ -287,10 +293,15 @@ img {
   max-width: 600px;
   color: #f2f2f2;
   opacity: 0.7;
-  transition: opacity 0.3s;
+  transition: transform 0.6s ease, transform-origin 0.6s ease;
 }
 
 .step.is-active {
   opacity: 1;
   border-color: #999;
+}
+
+.map {
+  transition: transform 1s ease;
+  transform-origin: center;
 }
