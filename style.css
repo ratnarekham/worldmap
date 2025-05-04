@@ -12,8 +12,34 @@ body {
   width: 100%;
   background-color: #262626;
   font-family: Helvetica, sans-serif;
+  color: white;
+}
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  pointer-events: none;
 }
 
+.headline h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.headline p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
 .h1 {
   color: white;
 }
@@ -268,7 +294,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 0;
 }
 
 .scroll_text {
