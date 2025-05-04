@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner with animation and zoom YAY</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/scrollama"></script>
+</head>
+
+<body>
+    <section id="scroll">
+        <div class="scroll_graphic">
+            <div class="map">
+                <img src="mp.png" alt="world_map">
+                <div class="dots">
+                    <div class="dot dot-1">
+                        <span class="tooltip"> China </span>
+                    </div>
+                    <div class="dot dot-2">
+                        <span class="tooltip"> United States </span>
+                    </div>
+                    <div class="dot dot-3">
+                        <span class="tooltip"> United Kingdom </span>
+                    </div>
+                    <div class="dot dot-4">
+                        <span class="tooltip"> Russia </span>
+                    </div>
+                    <div class="dot dot-5">
+                        <span class="tooltip"> India </span>
+                    </div>
+                    <div class="dot dot-6">
+                        <span class="tooltip"> Pakistan </span>
+                    </div>
+                    <div class="dot dot-7">
+                        <span class="tooltip"> North Korea </span>
+                    </div>
+                    <div class="dot dot-8">
+                        <span class="tooltip"> France </span>
+                    </div>
+                    <div class="dot dot-9">
+                        <span class="tooltip">Israel </span>
+                    </div>
+                    <div class="dot dot-10">
+                        <span class="tooltip">Ukraine </span>
+                    </div>
+                    <div class="dot dot-11">
+                        <span class="tooltip">Japan</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="scroll_text">
+            <div class="step" data-step="1">
+                <style>
+                </style>
+                <h2>Step 1</h2>
+                <p>This is the first step in our scrollama sequence. As you scroll through this section, the overlay on
+                    the map will change.</p>
+            </div>
+            <div class="step" data-step="2">
+                <h2>Step 2</h2>
+                <p>This is the second step in our scrollama sequence. The overlay will update to show different
+                    information.</p>
+            </div>
+            <div class="step" data-step="3">
+                <h2>Step 3</h2>
+                <p>This is the third and final step in our scrollama sequence. The overlay will change one more time.
+                </p>
+            </div>
+            <div class="step" data-step="4">
+                <h2>Step 4</h2>
+                <p>step 4444
+                </p>
+            </div>
+
+        </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script>
+        // Using d3 for selections
+        // Initialize scrollama
+        const scroller = scrollama();
+
+        const zoomConfig = {
+            1: { scale: 2.2, x: -60, y: -10 }, // China
+            2: { scale: 2, x: 30, y: -5 },     // US
+            3: { scale: 2, x: 10, y: -30 },    // UK
+            4: { scale: 1.5, x: -40, y: -40 }, // Russia
+            5: { scale: 2, x: -35, y: 30 },    // India
+            6: { scale: 2, x: -28, y: 32 },    // Pakistan
+            7: { scale: 2.3, x: -75, y: -5 },  // North Korea
+            8: { scale: 2, x: 5, y: -20 },     // France
+            9: { scale: 2, x: -10, y: 15 },    // Israel
+            10: { scale: 1, x: 0, y: 0 }       // Reset view
+        };
+
+
+
+        // Setup the scroller
+        function init() {
+            // Select elements using d3
+            const steps = d3.selectAll('.step');
+
+            // Setup scrollama
+            scroller
+                .setup({
+                    step: '.step',
+                    offset: 0.5,
+                    debug: false
+                })
+                .onStepEnter(response => {
+                    // Update active step
+                    steps.classed('is-active', (d, i) => i === response.index);
+                });
+
+            // Handle resize
+            window.addEventListener('resize', scroller.resize);
+        }
+
+        // Start the scrollama
+        init();
+    </script>
+</body>
+
+</html>
