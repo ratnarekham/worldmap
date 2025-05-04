@@ -199,22 +199,43 @@ img {
 
 /* Ukraine*/
 .dot-10 {
-  top: 30%;
-  left: 59%;
-  border: #ff00ff 0.05px solid;
-  animation: is_dot 5s infinite;
+  top: 37%;
+  left: 58%;
+  border: #d8d6d6 2px dotted;
+  animation: ua_dot 5s infinite;
 }
-@keyframes is_dot {
+
+/* @keyframes ua_dot {
   0% {
-    background-color: #ff00ff;
+    background-color: #d8d6d6;
   }
   50% {
     background-color: #000000;
   }
   100% {
-    background-color: #ff00ff;
+    background-color: #d8d6d6;
   }
+} */
+
+/* Japan */
+.dot-11 {
+  top: 45%;
+  left: 88.5%;
+  border: #d8d6d6 2px dotted;
+  animation: jp_dot 5s infinite;
 }
+
+/* @keyframes jp_dot {
+  0% {
+    background-color: #d8d6d6;
+  }
+  50% {
+    background-color: #000000;
+  }
+  100% {
+    background-color: #d8d6d6;
+  }
+} */
 
 .dot .tooltip {
   visibility: hidden;
